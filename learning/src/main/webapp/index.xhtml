@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Index</title>
+</h:head>
+
+<h:body>
+
+	<h:form id="form">
+	
+		<h1>Formulário de cadastro</h1>
+		
+		<span class="ui-float-label">
+			<p:inputText id="fieldName" value="#{personBean.name}"/>
+			<p:outputLabel for="@previous" value="Nome"/>
+   		</span> <br/>
+   		
+   		<span class="ui-float-label">
+			<p:inputText id="fieldCountry" value="#{personBean.country}"/>
+			<p:outputLabel for="@previous" value="País"/>
+   		</span> <br/>
+   		
+   		<span class="ui-float-label">
+			<p:inputText id="fieldState" value="#{personBean.state}"/>
+			<p:outputLabel for="@previous" value="Estado"/>
+   		</span> <br/>
+   		
+   		<span class="ui-float-label">
+			<p:inputText id="fieldAge" value="#{personBean.age}"/>
+			<p:outputLabel for="@previous" value="Idade"/>
+   		</span> <br/>
+   		
+   		<span class="ui-float-label">
+			<p:inputText id="fieldEmail" value="#{personBean.email}"/>
+			<p:outputLabel for="@previous" value="Email"/>
+   		</span> <br/>
+   		
+   		<p:commandButton type="button" value="Enviar" icon="pi pi-check" /> <br/> <br/>
+   		
+   		<p:commandButton value="Contato" action="contactpage" styleClass="ui-button-outlined"/>
+   		<p:commandButton value="List" action="listpage"/>
+   		
+	</h:form>
+	
+</h:body>
+</html>

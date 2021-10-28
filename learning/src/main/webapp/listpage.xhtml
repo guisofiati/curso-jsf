@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>List</title>
+</h:head>
+
+<h:body>
+	<h:form id="formPerson">
+		<p:commandButton value="Voltar" action="index"/> <br/> <br/>
+		<h1>Names list</h1> 
+		<p:outputLabel value="Type your name: " for="fieldName" /> <br/> <br/>
+   		<p:inputText id="fieldName" value="#{personBean.name}"/> <br/> <br/>
+   		<h:commandButton value="Add" action="#{personBean.addName}"/> <br/> <br/>
+   		
+    	 <p:dataTable value="#{personBean.names}" var="name">
+     		 <p:column headerText="Names">
+     	 		<h:outputText value="#{name}"/>
+     		 </p:column>
+ 	     </p:dataTable>
+ 	 </h:form>
+</h:body>
+</html>

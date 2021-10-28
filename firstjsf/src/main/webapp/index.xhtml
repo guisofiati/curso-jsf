@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Hi</title>
+	<script>
+		function changeFieldValue(){
+			var field = document.getElementById('formPerson:name');
+			field.value = 'I clicked in this field';
+			alert('clicked!');
+		}
+	</script>
+</h:head>
+
+<h:body>
+	<h:form id="formPerson">
+	<h1>Hello navigator!</h1>
+	
+	<h:inputText id="name" onclick="this.value='Changed the value'" onchange="alert('Value changed')"/>
+	<h:commandButton value="Ir" onclick="changeFieldValue()"/> <br/> <br/>
+	
+	<h:commandButton value="Navegar" action="mainpage"/> <br/>
+	<h:commandButton value="Clique aqui" action="Click"/>
+	</h:form>
+</h:body>
+</html>
