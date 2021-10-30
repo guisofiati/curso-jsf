@@ -26,6 +26,11 @@ public class PersonBean {
 		return "";
 	}
 	
+	public String countAge() {
+		age = age + 1;
+		return "";
+	}
+	
 	public String[] getPessoas() {
 		return pessoas;
 	}
