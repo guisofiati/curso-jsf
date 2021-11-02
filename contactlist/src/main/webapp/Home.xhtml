@@ -1,12 +1,52 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:h="http://java.sun.com/jsf/html" 
+xmlns:p="http://primefaces.org/ui"
+xmlns:f = "http://java.sun.com/jsf/core">
 
 <h:head>
-	<title>Home</title>
+	<title>Contact</title>
 </h:head>
 
 <h:body>
-	<h1>Home Screen</h1>
+	<h1>Helcome to your contact's list!</h1> <br/> <br/>
+	<h3>Your list: </h3>
+	
+	<h:form id="formContact">
+		<p:dataTable value="#{userData.contacts}" var="contact">
+			<p:column>
+				<f:facet name="header">Phone</f:facet>
+				#{contact.number}
+			</p:column>
+			<p:column>
+				<f:facet name="header">Name</f:facet>
+				#{contact.name}
+			</p:column>
+			<p:column>
+				<f:facet name="header">Delete</f:facet>
+				<h:commandButton value="Delete" action="#{userData.deleteContact(contact)}"/>
+			</p:column>
+		</p:dataTable> <br/>
+		
+		<hr />
+		
+		<h3>Add a new contact to your list</h3>
+		
+		<table>
+			<tr>
+				<td>Number: </td>
+				<td> <h:inputText size="10" value="#{userData.number}"/> </td>
+			</tr>
+			<tr>
+				<td>Name: </td>
+				<td> <h:inputText size="10" value="#{userData.name}"/> </td>
+			</tr>
+			<tr>
+				<td></td>
+				<td> <h:commandButton value="Add contact" action="#{userData.addContact}"/> </td>
+			</tr>
+		</table>
+	</h:form>
 </h:body>
 </html>
