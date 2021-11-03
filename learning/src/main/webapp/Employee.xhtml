@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html" 
+xmlns:p="http://primefaces.org/ui"
+xmlns:f = "http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Employee</title>
+</h:head>
+
+<h:body>
+
+	<h1>Employee's registration</h1>
+	<h:form id="formEmployee">
+		<h:panelGrid columns="2">
+			Name: <h:inputText />
+			Password: <h:inputSecret />
+			Gender 
+			<h:selectOneMenu>
+				<f:selectItem itemLabel="Masculine" itemValue="M" />
+				<f:selectItem itemLabel="Feminine" itemValue="F" />
+			</h:selectOneMenu>
+			
+			Status
+			<h:selectOneRadio>
+				<f:selectItem itemLabel="Ative" itemValue="A" />
+				<f:selectItem itemLabel="Inative" itemValue="I" />
+			</h:selectOneRadio>
+			
+			Notes
+			<h:inputTextarea rows="3" cols="20"/>
+			<h:commandButton value="Submit"/>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+
+</html>
