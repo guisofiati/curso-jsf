@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>github.guisofiati</groupId>
-	<artifactId>learning</artifactId>
+	<artifactId>hangman</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
@@ -27,28 +27,6 @@
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
 			<version>10.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.glassfish</groupId>
-			<artifactId>javax.faces</artifactId>
-			<version>2.2.10</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.inject</groupId>
-			<artifactId>javax.inject</artifactId>
-			<version>1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.weld.servlet</groupId>
-			<artifactId>weld-servlet</artifactId>
-			<version>2.3.1.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss</groupId>
-			<artifactId>jandex</artifactId>
-			<version>2.1.1.Final</version>
-			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 </project>
