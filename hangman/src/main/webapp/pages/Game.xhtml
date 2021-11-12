@@ -6,17 +6,14 @@ xmlns:p="http://primefaces.org/ui"
 xmlns:f = "http://java.sun.com/jsf/core">
 
 <h:head>
-	<h:outputStylesheet library="css" name="styleIndex.css" />
+	<h:outputStylesheet library="css" name="styleGame.css" />
 	<title>Hangman Game</title>
 </h:head>
 
 <h:body>
-	<div class="div-container">
-		<h1>Hangman Game</h1>
-		<p:graphicImage library="img" name="hangman-logo.png" width="900" styleClass="hangman-logo" />
-		<h:form>
-			<h:commandButton value="Play" action="Game"/>
-		</h:form>
-	</div>
+	<h:form>
+		<h:commandButton value="Return" action="Index"/>
+	</h:form>
+	<h1>Page of the game!</h1>
 </h:body>
 </html>
