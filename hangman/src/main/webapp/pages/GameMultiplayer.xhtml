@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html" 
+xmlns:p="http://primefaces.org/ui"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<h:outputStylesheet library="css" name="styleGame.css" />
+	<title>Hangman Game</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<h:commandButton value="Return" action="Index" />
+			<br/>
+			<br/>
+		<p:outputLabel value="Word to be find out: " />
+		<p:password value="#{hangmanMultiplayerBean.word}" size="10" /> 
+			<br/>
+		<p:outputLabel value="Total chances: "/>
+		<p:inputText value="#{hangmanMultiplayerBean.chances}" size="10" />
+			<br/>
+		<h:commandButton value="Start" action="#{hangmanMultiplayerBean.startGame}" />
+			<br/>
+			<br/>	
+		<p:outputLabel value="Chances remaining: " />
+		<p:outputLabel value="#{hangmanMultiplayerBean.chances}"/>
+	</h:form>
+	
+	<hr/>
+	
+	<br/>
+	
+	<c:forEach items="#{hangmanMultiplayerBean.letters}" var="letter">
+		<p:outputLabel styleClass="letter" value="_" rendered="#{not letter.thereis}" />
+		<p:outputLabel styleClass="letter" value="#{letter.letter}" rendered="#{letter.thereis}" />
+	</c:forEach>
+	
+	<br/>
+	<br/>
+	
+	<p:outputLabel value="You lose!!!" rendered="#{hangmanMultiplayerBean.chances eq 0 and not hangmanMultiplayerBean.rightAnswer}" />
+	<p:outputLabel value="You win!!!" rendered="#{hangmanMultiplayerBean.rightAnswer}" />
+	
+	<hr/>
+	
+	<h:form>
+		<p:inputText value="#{hangmanMultiplayerBean.letterReleased}" maxlength="1" size="1" />
+		<br/>
+		<h:commandButton value="Try" action="#{hangmanMultiplayerBean.showLetter}" disabled="#{hangmanMultiplayerBean.chances eq 0}" />
+	</h:form>
+</h:body>
+</html>

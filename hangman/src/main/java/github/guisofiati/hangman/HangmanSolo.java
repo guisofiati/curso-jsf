@@ -8,8 +8,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 @ViewScoped
-@ManagedBean(name = "hangmanBean")
-public class Hangman {
+@ManagedBean(name = "hangmanSoloBean")
+public class HangmanSolo {
 	
 	private static final Random RANDOM = new Random();
 	
@@ -50,6 +50,20 @@ public class Hangman {
 		if (!rightAnswer) {
 			remainingChances--;
 		}
+	}
+	
+	public boolean isRightAnswer() {
+		if (letters.isEmpty()) {
+			return false;
+		}
+		
+		for (int i = 0; i < letters.size(); i++) {
+			if (!letters.get(i).isThereis()) {
+				return false;
+			}
+		}
+		
+		return true;
 	}
 	
 	public String getWord() {

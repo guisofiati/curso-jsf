@@ -15,7 +15,9 @@ xmlns:f = "http://java.sun.com/jsf/core">
 		<h1>Hangman Game</h1>
 		<p:graphicImage library="img" name="hangman-logo.png" width="900" styleClass="hangman-logo" />
 		<h:form>
-			<h:commandButton value="Play" action="Game"/>
+			<h:commandButton value="Play Solo" action="GameSolo"/>
+				<br/>
+			<h:commandButton value="Play Multiplayer" action="GameMultiplayer"/>
 		</h:form>
 	</div>
 </h:body>
