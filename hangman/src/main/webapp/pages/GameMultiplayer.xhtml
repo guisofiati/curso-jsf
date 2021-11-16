@@ -20,14 +20,22 @@ xmlns:ui="http://java.sun.com/jsf/facelets">
 		<p:outputLabel value="Word to be find out: " />
 		<p:password value="#{hangmanMultiplayerBean.word}" size="10" /> 
 			<br/>
+			<br/>
 		<p:outputLabel value="Total chances: "/>
 		<p:inputText value="#{hangmanMultiplayerBean.chances}" size="10" />
+			<br/>
 			<br/>
 		<h:commandButton value="Start" action="#{hangmanMultiplayerBean.startGame}" />
 			<br/>
 			<br/>	
 		<p:outputLabel value="Chances remaining: " />
 		<p:outputLabel value="#{hangmanMultiplayerBean.chances}"/>
+			<br/>
+			<br/>
+		<h5>Theme</h5>
+        <p:selectOneRadio id="theme" value="#{hangmanMultiplayerBean.theme}" layout="grid" columns="3" styleClass="grid-radio">
+            <f:selectItems value="#{hangmanMultiplayerBean.themes}" var="theme" itemLabel="#{theme}" itemValue="#{theme}"/>
+        </p:selectOneRadio>
 	</h:form>
 	
 	<hr/>

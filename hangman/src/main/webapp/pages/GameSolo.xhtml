@@ -40,15 +40,16 @@ xmlns:ui="http://java.sun.com/jsf/facelets">
 	<br/>
 	<br/>
 	
-	<p:outputLabel value="You lose!!!" rendered="#{hangmanSoloBean.remainingChances eq 0 and not hangmanSoloBean.rightAnswer}" />
-	<p:outputLabel value="You win!!!" rendered="#{hangmanSoloBean.rightAnswer}" />
-	
-	<br/>
-	
 	<c:forEach items="#{hangmanSoloBean.letters}" var="letter">
 		<p:outputLabel styleClass="letter" value="_" rendered="#{not letter.thereis}" />
 		<p:outputLabel styleClass="letter" value="#{letter.letter}" rendered="#{letter.thereis}" />
 	</c:forEach>
+	
+	<br/>
+	<br/>
+	
+	<p:outputLabel value="You lose!!!" rendered="#{hangmanSoloBean.remainingChances eq 0 and not hangmanSoloBean.rightAnswer}" />
+	<p:outputLabel value="You win!!!" rendered="#{hangmanSoloBean.rightAnswer}" />
 	
 	<hr/>
 	

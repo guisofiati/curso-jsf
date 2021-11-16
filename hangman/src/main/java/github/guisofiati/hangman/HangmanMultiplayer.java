@@ -3,6 +3,7 @@ package github.guisofiati.hangman;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -15,6 +16,22 @@ public class HangmanMultiplayer {
 	private List<LettersWord> letters = new ArrayList<LettersWord>();
 	private String letterReleased;
 	private int chances;
+	private List<String> themes;
+	private String theme;
+	
+	 @PostConstruct
+	    public void randomTheme() {
+	        themes = new ArrayList<String>();
+	        themes.add("Fruta");
+	        themes.add("Comidas");
+	        themes.add("Político");
+	        themes.add("País");
+	        themes.add("Estado");
+	        themes.add("Cidade");
+	        themes.add("Time");
+	        themes.add("Jogador");
+	        themes.add("Outro");
+	    }
 	
 	public void startGame() {
 		
@@ -103,5 +120,21 @@ public class HangmanMultiplayer {
 
 	public void setRemainingChances(int chances) {
 		this.chances = chances;
+	}
+
+	public List<String> getThemes() {
+		return themes;
+	}
+
+	public void setThemes(List<String> themes) {
+		this.themes = themes;
+	}
+
+	public String getTheme() {
+		return theme;
+	}
+
+	public void setTheme(String theme) {
+		this.theme = theme;
 	}
 }
