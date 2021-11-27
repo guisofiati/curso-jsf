@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://java.sun.com/jsf/html" 
+xmlns:p="http://primefaces.org/ui"
+xmlns:f = "http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>Schedule</title>
+</h:head>
+
+<h:body>
+	<h:form>
+	<h1>To schedule</h1>
+	
+	<p:outputLabel value="Full name"/>
+		<br/>
+	<p:inputText value="#{checkoutBean.fullName}"/>
+	
+		<br/>
+		<br/>
+		
+		<p:outputLabel value="Doctor"/>
+			<br/>
+		<p:selectOneMenu immediate="true" valueChangeListener="#{checkoutBean.changeFields}" value="#{checkoutBean.doctorName}" >
+	        <f:selectItem itemValue="" itemLabel="Select a doctor"/> 
+	        <f:selectItem itemValue="#{checkoutBean.doctors[0].name}" itemLabel="#{checkoutBean.doctors[0].name}"/>
+	        <f:selectItem itemValue="#{checkoutBean.doctors[1].name}" itemLabel="#{checkoutBean.doctors[1].name}"/>
+	        <f:selectItem itemValue="#{checkoutBean.doctors[2].name}" itemLabel="#{checkoutBean.doctors[2].name}"/>
+	        <p:ajax update="specility, address"></p:ajax>
+         </p:selectOneMenu>
+		
+         <br/>
+		 <br/>
+
+		 <p:outputLabel value="Speciality"/>
+			 <br/>
+		 <p:selectOneMenu id="specility" value="#{checkoutBean.speciality}">
+			<f:selectItem itemValue="" itemLabel="Select a speciality"/>
+            <f:selectItems value="#{checkoutBean.doctorSpeciality}"/>
+         </p:selectOneMenu>
+         
+         <br/>
+		 <br/>
+         
+         <p:outputLabel value="Address"/>
+         	<br/>
+	     <p:selectOneMenu id="address" value="#{checkoutBean.address}">
+	        <f:selectItem itemValue="" itemLabel="Select an address "/>
+	        <f:selectItems value="#{checkoutBean.doctorAddress}"/>
+	     </p:selectOneMenu>
+        
+		 <br/>
+		 <br/>
+		 
+		 <p:datePicker inline="true"  showTime="true" value="#{checkoutBean.date}"/>
+		 
+		 <br/>
+		 <br/>
+		 
+		 <h:commandButton value="To schedule" action="#{checkoutBean.saveCheckout}"/>
+		 	<br/>
+		 	<br/>
+	     <h:commandButton value="Voltar" action="Index" />
+	     
+	     <br/>
+	</h:form>
+</h:body>
+</html>

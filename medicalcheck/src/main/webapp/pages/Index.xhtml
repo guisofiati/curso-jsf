@@ -10,6 +10,37 @@ xmlns:f = "http://java.sun.com/jsf/core">
 </h:head>
 
 <h:body>
-	<h1>Checkout's main page</h1>
+	<h:form>
+		<p:panel>
+			<h1>Schedules</h1>
+			
+			<br/>
+			
+			<p:dataTable id="checkout" var="checkout" value="#{checkoutBean.checkouts}">
+				<p:column headerText="Patient">
+					<h:outputText value="#{checkout.patient}"/>
+				</p:column>
+				<p:column headerText="Doctor">
+					<h:outputText value="#{checkout.doctor}"/>
+				</p:column>
+				<p:column headerText="Speciality">
+					<h:outputText value="#{checkout.speciality}"/>
+				</p:column>
+				<p:column headerText="Address">
+					<h:outputText value="#{checkout.address}"/>
+				</p:column>
+				<p:column headerText="Date">
+					<h:outputText value="#{checkout.date}"/>
+				</p:column>
+			</p:dataTable>
+			
+			<br/>
+			<br/>
+			
+			<p:commandButton value="To schedule" action="Schedule"/>
+			
+			<br/>
+		</p:panel>
+	</h:form>
 </h:body>
 </html>

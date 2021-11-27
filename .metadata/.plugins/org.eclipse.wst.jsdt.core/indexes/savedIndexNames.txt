@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+C:\Users\gui_s\Documents\workspaces\ws-eclipse\curso_jsf\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2520522120.index
+3586750535.index
+229502642.index
+345784694.index
+1767265704.index
